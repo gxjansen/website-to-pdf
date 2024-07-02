@@ -2,7 +2,7 @@
 
 I needed a crawler to generate PDF files that can be used to train/customize LLMs with.
 
-This Python-based tool crawls a specified website, generates PDFs of the crawled pages, and merges them into a single PDF document. It's designed to be ethical and respectful of the target website's resources.
+This Python-based tool crawls a specified website, generates PDFs of the crawled pages, and merges them into a single PDF document. It's designed to be ethical and respectful of the target website's resources and created with help from Claude 3.5 Sonnet & Opus.
 
 The script tries to remove common elements from the webpages like headers, footers and navigation items. It also includes a PDF optimization process to bring down the PDF size.
 
