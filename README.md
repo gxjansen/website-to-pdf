@@ -38,6 +38,7 @@ This will install all necessary packages for the Web Crawler PDF Generator to ru
    - Follow the prompts:
      - Enter the full URL of the website you want to crawl (e.g., https://www.example.com).
      - Enter the number of pages you want to crawl, or type 'All' for unlimited crawling.
+     - Enter the maximum PDF file size your want (an integer staring at 10MB), or type "no" for unlimited filesize.
 
 3. **Output**:
    - The script will create a directory named `[domain]_pdfs` (e.g., `example.com_pdfs`).
