@@ -134,14 +134,14 @@ async def new_crawl():
 
     # Ask for file size limit
     while True:
-        size_limit_input = input("Enter the maximum size per PDF in MB (10 or higher), or 'no' for no limit: ").strip().lower()
+        size_limit_input = input("Enter the maximum size per PDF in MB (5 or higher), or 'no' for no limit: ").strip().lower()
         if size_limit_input == 'no':
             size_limit = None
             break
-        elif size_limit_input.isdigit() and int(size_limit_input) >= 10:
+        elif size_limit_input.isdigit() and int(size_limit_input) >= 5:
             size_limit = int(size_limit_input)
             break
-        print("Invalid input. Please enter a number 10 or higher, or 'no'.")
+        print("Invalid input. Please enter a number 5 or higher, or 'no'.")
 
     # Crawl the site
     crawler = EthicalCrawler(start_url)
@@ -165,14 +165,14 @@ async def main():
             print(f"Using existing crawl data for {start_url} with {len(urls)} URLs.")
             # Ask for file size limit when using existing data
             while True:
-                size_limit_input = input("Enter the maximum size per PDF in MB (10 or higher), or 'no' for no limit: ").strip().lower()
+                size_limit_input = input("Enter the maximum size per PDF in MB (5 or higher), or 'no' for no limit: ").strip().lower()
                 if size_limit_input == 'no':
                     size_limit = None
                     break
-                elif size_limit_input.isdigit() and int(size_limit_input) >= 10:
+                elif size_limit_input.isdigit() and int(size_limit_input) >= 5:
                     size_limit = int(size_limit_input)
                     break
-                print("Invalid input. Please enter a number 10 or higher, or 'no'.")
+                print("Invalid input. Please enter a number 5 or higher, or 'no'.")
         else:
             start_url, urls, size_limit = await new_crawl()
     else:
