@@ -116,9 +116,14 @@ async def new_crawl():
         print("Invalid URL. Please include the protocol (http:// or https://)")
         return None, [], None
 
+    # Inform user about the ignore file
+    print("\nNote: You can add URLs to ignore in the 'ignore_urls.txt' file.")
+    print("The crawler will skip any URLs that match the patterns in this file.")
+    print("You can use '*' as a wildcard in the ignore patterns.")
+
     # Ask user for the number of pages to crawl or "All"
     while True:
-        crawl_option = input("Enter the number of pages to crawl or 'All' for unlimited crawling: ").strip().lower()
+        crawl_option = input("\nEnter the number of pages to crawl or 'All' for unlimited crawling: ").strip().lower()
         if crawl_option == 'all':
             limit = None
             break

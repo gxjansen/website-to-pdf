@@ -5,6 +5,7 @@ import time
 import random
 from urllib.robotparser import RobotFileParser
 from requests.exceptions import RequestException
+import re
 
 class EthicalCrawler:
     def __init__(self, start_url):
@@ -16,6 +17,7 @@ class EthicalCrawler:
         self.robot_parser.set_url(urljoin(start_url, '/robots.txt'))
         self.robot_parser.read()
         self.crawl_delay = self.get_crawl_delay()
+        self.ignore_patterns = self.load_ignore_patterns()
 
     def get_crawl_delay(self):
         crawl_delay = self.robot_parser.crawl_delay('*')
@@ -27,6 +29,22 @@ class EthicalCrawler:
     def adaptive_delay(self, response_time):
         delay = max(self.crawl_delay, response_time * 2)
         time.sleep(delay + random.uniform(0.5, 1.5))
+
+    def load_ignore_patterns(self):
+        patterns = []
+        try:
+            with open('ignore_urls.txt', 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        pattern = line.replace('*', '.*')  # Convert wildcard to regex
+                        patterns.append(re.compile(pattern))
+        except FileNotFoundError:
+            print("ignore_urls.txt not found. No URLs will be ignored.")
+        return patterns
+
+    def should_ignore(self, url):
+        return any(pattern.match(url) for pattern in self.ignore_patterns)
 
     def get_links(self, url):
         try:
@@ -44,7 +62,10 @@ class EthicalCrawler:
                     if href:
                         full_url = urljoin(url, href)
                         if urlparse(full_url).netloc == self.domain and '#' not in full_url:
-                            links.append(full_url)
+                            if not self.should_ignore(full_url):
+                                links.append(full_url)
+                            else:
+                                print(f"Ignoring URL: {full_url}")
                 return links
             else:
                 print(f"Failed to fetch {url}: HTTP {response.status_code}")
@@ -57,7 +78,7 @@ class EthicalCrawler:
         to_visit = [self.start_url]
         while to_visit and (limit is None or len(self.visited) < limit):
             url = to_visit.pop(0)
-            if url not in self.visited and self.can_fetch(url):
+            if url not in self.visited and self.can_fetch(url) and not self.should_ignore(url):
                 print(f"Crawling: {url}")
                 self.visited.add(url)
                 for link in self.get_links(url):

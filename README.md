@@ -9,7 +9,7 @@ The script tries to remove common elements from the webpages like headers, foote
 Below are some benchmarks of a crawled documentation website. The end result of course very much depends on the amount of content (text and images) on those pages.
 - 10 webpages: 51 PDF pages, total 4,6 MB
 - 100 webpages: 743 PDF pages, total 33,6 MB
-- 250 webpages: 1636 PDF pages: 72,7 MB
+- 300 webpages: 1636 PDF pages: 72,7 MB
 
 ## How to Use
 

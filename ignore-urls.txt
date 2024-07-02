@@ -1,0 +1,4 @@
+https://www.github.com/*
+# Add more URLs or patterns to ignore, one per line
+# You can use '*' as a wildcard
+# Lines starting with '#' are treated as comments
