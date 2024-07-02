@@ -1,0 +1,5 @@
+PyPDF2
+Pillow
+requests
+beautifulsoup4
+pyppeteer

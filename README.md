@@ -7,12 +7,20 @@ This Python-based tool crawls a specified website, generates PDFs of the crawled
 ## How to Use
 
 1. **Setup**:
-   - Ensure you have Python 3.7+ installed on your system.
-   - Clone this repository to your local machine.
-   - Install the required dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
+ - Ensure you have Python 3.7+ installed on your system.
+ - Clone this repository to your local machine.
+ - Navigate to the project directory in your terminal.
+ - (Optional but recommended) Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+ - Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+This will install all necessary packages for the Web Crawler PDF Generator to run.
 
 2. **Running the Script**:
    - Open a terminal and navigate to the project directory.
