@@ -4,6 +4,13 @@ I needed a crawler to generate PDF files that can be used to train/customize LLM
 
 This Python-based tool crawls a specified website, generates PDFs of the crawled pages, and merges them into a single PDF document. It's designed to be ethical and respectful of the target website's resources.
 
+The script tries to remove common elements from the webpages like headers, footers and navigation items. It also includes a PDF optimization process to bring down the PDF size.
+
+Below are some benchmarks of a crawled documentation website. The end result of course very much depends on the amount of content (text and images) on those pages.
+- 10 webpages: 51 PDF pages, total 4,6 MB
+- 100 webpages: 743 PDF pages, total 33,6 MB
+- 250 webpages: 1636 PDF pages: 72,7 MB
+
 ## How to Use
 
 1. **Setup**:
