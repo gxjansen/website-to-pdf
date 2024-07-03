@@ -12,18 +12,10 @@ Below are some benchmarks of a crawled documentation website. The end result of 
 - 300 URLs: 1636 PDF pages, total 72,7 MB
 
 ## Index:
-- [Web Crawler PDF Generator](#web-crawler-pdf-generator)
-  - [Index:](#index)
   - [How to Use](#how-to-use)
   - [How It Works](#how-it-works)
   - [Ethical Considerations](#ethical-considerations)
   - [System Requirements](#system-requirements)
-    - [Hardware Requirements:](#hardware-requirements)
-    - [Software Requirements:](#software-requirements)
-    - [Python Dependencies:](#python-dependencies)
-    - [Additional Notes:](#additional-notes)
-    - [Recommended Setup:](#recommended-setup)
-  - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
   - [License](#license)
 
