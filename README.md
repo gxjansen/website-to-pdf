@@ -2,14 +2,14 @@
 
 I needed a crawler to generate PDF files that can be used to train/customize LLMs with.
 
-This Python-based tool crawls a specified website, generates PDFs of the crawled pages, and merges them into a single PDF document. It's designed to be ethical and respectful of the target website's resources and created with help from Claude 3.5 Sonnet & Opus.
+This Python-based tool crawls a specified website, generates PDFs of the crawled pages, and merges them into a single PDF document. It's designed to be ethical and respectful of the target website's resources and created with help from Claude 3.5 Sonnet.
 
 The script tries to remove common elements from the webpages like headers, footers and navigation items. It also includes a PDF optimization process to bring down the PDF size.
 
 Below are some benchmarks of a crawled documentation website. The end result of course very much depends on the amount of content (text and images) on those pages.
 - 10 URLs: 51 PDF pages, total 4,6 MB
 - 165 URLs: 881 PDF pages, total 30,8 MB
-- 300 URLs: 1636 PDF pages: 72,7 MB
+- 300 URLs: 1636 PDF pages, total 72,7 MB
 
 ## How to Use
 
@@ -43,6 +43,7 @@ This will install all necessary packages for the Web Crawler PDF Generator to ru
 3. **Output**:
    - The script will create a directory named `[domain]_pdfs` (e.g., `example.com_pdfs`).
    - A merged PDF file will be generated in the project directory, named `[domain]_complete[_limit].pdf` (e.g., `example.com_complete_10.pdf` for 10 pages, or `example.com_complete.pdf` for unlimited crawling).
+   - Depending on the data volume (amount of URLs and amount of text an images on those pages) and your system performance, crawling an generating the final PDFs can take quite some time.
 
 ## How It Works
 
