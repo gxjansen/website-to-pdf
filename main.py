@@ -117,7 +117,7 @@ async def new_crawl():
         return None, [], None
 
     # Inform user about the ignore file
-    print("\nNote: You can add URLs to ignore in the 'ignore_urls.txt' file.")
+    print("\nNote: You can add URLs to ignore in the 'ignore-urls.txt' file.")
     print("The crawler will skip any URLs that match the patterns in this file.")
     print("You can use '*' as a wildcard in the ignore patterns.")
 

@@ -33,14 +33,14 @@ class EthicalCrawler:
     def load_ignore_patterns(self):
         patterns = []
         try:
-            with open('ignore_urls.txt', 'r') as f:
+            with open('ignore-urls.txt', 'r') as f:
                 for line in f:
                     line = line.strip()
                     if line and not line.startswith('#'):
                         pattern = line.replace('*', '.*')  # Convert wildcard to regex
                         patterns.append(re.compile(pattern))
         except FileNotFoundError:
-            print("ignore_urls.txt not found. No URLs will be ignored.")
+            print("ignore-urls.txt not found. No URLs will be ignored.")
         return patterns
 
     def should_ignore(self, url):
